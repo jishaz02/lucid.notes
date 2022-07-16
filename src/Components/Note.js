@@ -32,7 +32,7 @@ const Note = (props) => {
             alt="Save"
             className="h-6 cursor-pointer mr-4"
             onClick={() => {
-              fetch("http://localhost:5000/updateNote", {
+              fetch("https://lucid-notes.herokuapp.com/updateNote", {
                 method: "PATCH",
                 headers: {
                   "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const Note = (props) => {
             alt="Delete"
             className="h-6 cursor-pointer"
             onClick={() => {
-              fetch("http://localhost:5000/deleteNote", {
+              fetch("https://lucid-notes.herokuapp.com/deleteNote", {
                 method: "DELETE",
                 headers: {
                   "Content-Type": "application/json",

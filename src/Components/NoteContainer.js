@@ -9,14 +9,14 @@ const NoteContainer = () => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getNotes")
+    fetch("https://lucid-notes.herokuapp.com/getNotes")
       .then((res) => res.json())
       .then((data) => setNotesList(data))
       .catch((err) => console.log(err));
   }, []);
 
   const saveReload = useCallback(() => {
-    fetch("http://localhost:5000/getNotes")
+    fetch("https://lucid-notes.herokuapp.com/getNotes")
       .then((res) => res.json())
       .then(async (data) => {
         setNotesList(data);
@@ -28,7 +28,7 @@ const NoteContainer = () => {
   }, []);
 
   const deleteReload = useCallback(() => {
-    fetch("http://localhost:5000/getNotes")
+    fetch("https://lucid-notes.herokuapp.com/getNotes")
       .then((res) => res.json())
       .then(async (data) => {
         setNotesList(data);
@@ -59,7 +59,7 @@ const NoteContainer = () => {
       <div
         className=" bg-[#E8AA42] rounded-full h-16 w-16 flex justify-center items-center z-10 fixed bottom-0 right-0 m-10 cursor-pointer"
         onClick={() =>
-          fetch("http://localhost:5000/addNote")
+          fetch("https://lucid-notes.herokuapp.com/addNote")
             .then((res) => res.json())
             .then((data) => setNotesList(data))
             .catch((err) => console.log(err))
